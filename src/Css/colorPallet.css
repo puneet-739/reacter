@@ -1,0 +1,16 @@
+.mainPalletContainer {
+    margin: 0px 5px;
+}
+
+.colorPallet {
+    height: 20px;
+    width: 50px;
+}
+
+.borderTop {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.borderBottom {
+    border-radius: 0px 0px 5px 5px;
+}
