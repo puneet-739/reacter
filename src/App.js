@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <NavBar title='ReactApp' mode={mode} setMode={setMode} theme={theme} setTheme={setTheme} />
+      <NavBar title='Reacter' mode={mode} setMode={setMode} theme={theme} setTheme={setTheme} />
 
       <Routes>
 
