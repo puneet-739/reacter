@@ -9,6 +9,7 @@ function AppBody({ mode , theme , setTheme}) {
         document.body.style.backgroundColor = theme.bodyColor;
         document.body.style.color = theme.textColor;
     })());
+    const textAreaStyle = theme? ({backgroundColor: theme.layerThree, color: theme.textColor}): ({ backgroundColor: isDark ? '#353535' : 'white', color: !isDark ? 'gray' : 'white' });
     return (
         <div >
             <div className="container py-5">  {/*style={theme && {backgroundColor: theme.bodyColor}}*/}
@@ -19,12 +20,12 @@ function AppBody({ mode , theme , setTheme}) {
                     className={`form-control`}
                     id="exampleFormControlTextarea1"
                     rows={6}
-                    style={{ backgroundColor: isDark ? '#353535' : 'white', color: !isDark ? 'gray' : 'white' }}
+                    style={textAreaStyle}
                     value={formText}
                     onChange={(event) => { setFormText(event.target.value) }}
                 />
                 {/* <GeneralButton id="UpperCaseBtn" buttonText="UPPERCASE" onClick={textToUpperCase} /> */}
-                <ButtonList text={formText} setText={setFormText} />
+                <ButtonList text={formText} setText={setFormText} theme={theme}/>
                 <TextDetails text={formText} />
             </div>
         </div>
@@ -32,9 +33,10 @@ function AppBody({ mode , theme , setTheme}) {
     );
 }
 
-function GeneralButton({ id, buttonText, onClick }) {
+function GeneralButton({ id, buttonText, onClick, theme }) {
+    console.log(theme);
     return (
-        <button type="button" id={id} className="btn btn-primary mt-3 me-2" onClick={onClick}>
+        <button type="button" style={{background: theme? theme.buttonColor: '#3399ff'}} id={id} className="btn mt-3 me-2" onClick={onClick} color="black">
             {buttonText}
         </button>
     );
@@ -62,13 +64,13 @@ const clearText = (text, setText) => {
     setText('');
 }
 
-function ButtonList({ text, setText }) {
+function ButtonList({ text, setText, theme }) {
     return (
         <>
-            <GeneralButton id="UpperCaseBtn" buttonText="UPPERCASE" onClick={() => upperCase(text, setText)} />
-            <GeneralButton id="LowerCaseBtn" buttonText="Lowercase" onClick={() => lowerCase(text, setText)} />
-            <GeneralButton id="reverseStringBtn" buttonText="Reverse" onClick={() => reverseText(text, setText)} />
-            <GeneralButton id="ClearBtn" buttonText="Clear" onClick={() => clearText(text, setText)} />
+            <GeneralButton id="UpperCaseBtn" buttonText="UPPERCASE" theme={theme} onClick={() => upperCase(text, setText)} />
+            <GeneralButton id="LowerCaseBtn" buttonText="Lowercase" theme={theme} onClick={() => lowerCase(text, setText)} />
+            <GeneralButton id="reverseStringBtn" buttonText="Reverse" theme={theme} onClick={() => reverseText(text, setText)} />
+            <GeneralButton id="ClearBtn" buttonText="Clear" theme={theme} onClick={() => clearText(text, setText)} />
         </>
     );
 }

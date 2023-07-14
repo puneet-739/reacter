@@ -43,7 +43,7 @@ function App() {
           <AppBody mode={mode} theme={theme} setTheme={setTheme} />
         }/>
         <Route path='about' element = {
-          <About />
+          <About theme={theme}/>
           } />
         <Route path='*' element = {
           // <Error404 />
