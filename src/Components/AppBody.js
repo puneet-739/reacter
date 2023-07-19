@@ -12,7 +12,7 @@ function AppBody({ mode , theme , setTheme}) {
     const textAreaStyle = theme? ({backgroundColor: theme.layerThree, color: theme.textColor}): ({ backgroundColor: isDark ? '#353535' : 'white', color: !isDark ? 'gray' : 'white' });
     return (
         <div >
-            <div className="container py-5">  {/*style={theme && {backgroundColor: theme.bodyColor}}*/}
+            <div className="mx-5 py-5">  {/*style={theme && {backgroundColor: theme.bodyColor}}*/}
                 <label htmlFor="exampleFormControlTextarea1" className="form-label">
                     Enter your text
                 </label>

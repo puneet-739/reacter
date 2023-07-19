@@ -5,6 +5,8 @@ import { useState } from 'react';
 import About from './Components/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Error404 from './Components/Error';
+import SideBar from './Components/SideBar';
+import './Css/parentAppBody.css'
 
 
 // DEFAULT APP
@@ -33,9 +35,36 @@ function App() {
     <>
       <BrowserRouter>
       <NavBar title='Reacter' mode={mode} setMode={setMode} theme={theme} setTheme={setTheme} />
-
+      <ParentAppBody mode={mode} theme={theme} setTheme={setTheme}/>
+      {/* <SideBar />
       <Routes>
+      <Route path='/' element={
+          <AppBody mode={mode} theme={theme} setTheme={setTheme} />
+        } />
+        <Route path='home' element= {
+          <AppBody mode={mode} theme={theme} setTheme={setTheme} />
+        }/>
+        <Route path='about' element = {
+          <About theme={theme}/>
+          } />
+        <Route path='*' element = {
+          // <Error404 />
+          <AppBody mode={mode} theme={theme} setTheme={setTheme} />
+          } />
+      </Routes> */}
+      </BrowserRouter>
+    </>
+  );
+}
 
+function ParentAppBody({mode, theme, setTheme}) {
+  const backgroundColor = theme? theme.layerThree : 'white';
+  return (<div className='parent'>
+    <div className='child-side' style={{backgroundColor: backgroundColor}}>
+    <SideBar mode={mode} theme={theme} setTheme={setTheme}/>
+    </div>
+    <div className='child-body'>
+    <Routes>
       <Route path='/' element={
           <AppBody mode={mode} theme={theme} setTheme={setTheme} />
         } />
@@ -50,9 +79,8 @@ function App() {
           <AppBody mode={mode} theme={theme} setTheme={setTheme} />
           } />
       </Routes>
-      </BrowserRouter>
-    </>
-  );
+    </div>
+  </div>);
 }
 
 export default App;
