@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../Css/parentAppBody.css';
+import '../../Css/parentAppBody.css';
 
 const menuList = [
     'home', 'news monkey','777', 'puzzle', 'fun'

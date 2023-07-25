@@ -1,5 +1,5 @@
-import '../Css/toggle.css'
-import '../Css/colorPallet.css'
+import '../../Css/toggle.css'
+import '../../Css/colorPallet.css'
 import { Link } from 'react-router-dom';
 import { FaMoon, FaPalette, FaSun } from 'react-icons/fa';
 import { Menu, MenuItem} from '@mui/material';

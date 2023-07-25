@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../Css/appBody.css';
+import '../../Css/appBody.css';
 
 function AppBody({ mode , theme , setTheme}) {
     let isDark = mode === 'dark';

@@ -1,11 +1,12 @@
 import './App.css';
-import NavBar from './Components/Navbar';
-import AppBody from './Components/AppBody';
+import NavBar from './Components/NavBar/Navbar';
+import AppBody from './Components/AppBody/AppBody';
+// import AppBody from './Components/AppBody/AppBody';
 import { useState } from 'react';
-import About from './Components/About';
+import About from './Components/AppBody/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Error404 from './Components/Error';
-import SideBar from './Components/SideBar';
+import Error404 from './Components/AppBody/Error';
+import SideBar from './Components/SideBar/SideBar';
 import './Css/parentAppBody.css'
 
 
