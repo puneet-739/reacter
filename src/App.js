@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Error404 from './Components/AppBody/Error';
 import SideBar from './Components/SideBar/SideBar';
 import './Css/parentAppBody.css'
+import NewsMonkey from './Components/AppBody/NewsMonkey';
 
 
 // DEFAULT APP
@@ -75,6 +76,9 @@ function ParentAppBody({mode, theme, setTheme}) {
         }/>
         <Route path='about' element = {
           <About theme={theme}/>
+          } />
+        <Route path='newsMonkey' element = {
+          <NewsMonkey theme={theme}/>
           } />
         <Route path='*' element = {
           // <Error404 />
