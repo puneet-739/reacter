@@ -58,7 +58,8 @@ function App() {
 }
 
 function ParentAppBody({mode, theme, setTheme}) {
-  const backgroundColor = theme? theme.layerThree : 'white';
+  const isDark = mode === 'dark';
+  const backgroundColor = theme? theme.layerThree : (!isDark? 'white':'black');
   return (<div className='parent'>
     <div className='child-side' style={{backgroundColor: backgroundColor}}>
     <SideBar mode={mode} theme={theme} setTheme={setTheme}/>
