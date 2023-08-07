@@ -49,11 +49,8 @@ function NavBar({ title = 'title', mode, setMode, theme, setTheme }) {
     let navBarMode = theme ? (theme.textColor === 'black' ? 'light' : 'dark') : mode;
     console.log(navBarMode);
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${navBarMode} ${bgMode}`} style={theme && { backgroundColor: theme.navbarColor }}>
+        <nav className={`navbar navbar-expand-lg navbar-${navBarMode} ${bgMode} fixed-top`} style={theme && { backgroundColor: theme.navbarColor }}>
             <div className="container-fluid" >
-                {/* <a className="navbar-brand" href="#">
-                    {title}
-                </a> */}
                 <Link className="navbar-brand" to="/home">
                     {title}
                 </Link>

@@ -1,5 +1,6 @@
 .parent {
     display: flex;
+    margin-top: 50px
 }
 
 .child-side {
